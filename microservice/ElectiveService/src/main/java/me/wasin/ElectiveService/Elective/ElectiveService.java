@@ -1,11 +1,14 @@
 package me.wasin.ElectiveService.Elective;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityListeners;
 import java.util.List;
 
 @Service
+@EntityListeners(AuditingEntityListener.class)
 public class ElectiveService {
 
     @Autowired

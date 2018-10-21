@@ -7,6 +7,7 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "electives")
 public class Elective implements Serializable {
 
     @Id
