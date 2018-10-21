@@ -1,0 +1,5 @@
+applications:
+- name: RegisterService
+  random-route: true
+  memory: 256MB
+  path: target/RegisterService-0.0.1-SNAPSHOT.jar

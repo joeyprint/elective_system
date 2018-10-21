@@ -1,0 +1,5 @@
+applications:
+- name: ElectiveService
+  random-route: true
+  memory: 256MB
+  path: target/ElectiveService-0.0.1-SNAPSHOT.jar
