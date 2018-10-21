@@ -1,0 +1,8 @@
+﻿id,subject_id,subject_name,lecturer_id
+1,INT102,Programming 1,
+2,INT105,Programming 2,
+3,INT202,Software Process Development,
+4,INT492,Big Data Analytics,
+5,INT491,Cloud-native application development,
+6,INT491,Management Information System,
+7,INT492,Data Center System Design,
