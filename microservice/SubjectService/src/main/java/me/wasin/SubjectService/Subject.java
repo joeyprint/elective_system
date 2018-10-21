@@ -18,7 +18,6 @@ public class Subject {
     @Column(name = "subject_name")
     private String subjectName;
 
-    @NotBlank
     @Column(name = "lecturer_id")
     private int lecturerId;
 
