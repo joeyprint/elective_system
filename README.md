@@ -1,4 +1,4 @@
-#Manual Elective SIT
+# Manual Elective SIT
 
 1. Install Program
 2. Change application.properties for connect database
