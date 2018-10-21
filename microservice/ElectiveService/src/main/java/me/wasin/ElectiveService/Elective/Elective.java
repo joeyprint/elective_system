@@ -5,6 +5,7 @@ import me.wasin.ElectiveService.Subject.Subject;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name = "electives")
@@ -20,6 +21,15 @@ public class Elective implements Serializable {
 
     @Column(name = "total_register")
     private int totalRegister;
+
+    @NotBlank
+    @Column(name = "start_at")
+    private Date startAt;
+
+    @NotBlank
+    @Column(name = "end_at")
+    private Date endAt;
+
 
     public Elective() {
         super();
