@@ -18,7 +18,6 @@ public class Elective implements Serializable {
     @JoinColumn(name = "subject_id", nullable = false)
     private Subject subject;
 
-    @NotBlank
     @Column(name = "total_register")
     private int totalRegister;
 

@@ -8,7 +8,7 @@ public class SubjectAdapter {
 
     public Subject getSubjectById(int subjectId) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8081/subject/" + subjectId;
+        String url = "http://localhost:3001/subject/" + subjectId;
         Subject subject = restTemplate.getForObject(url, Subject.class);
         return subject;
     }

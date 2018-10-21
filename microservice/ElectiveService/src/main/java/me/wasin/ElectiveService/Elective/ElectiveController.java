@@ -26,16 +26,17 @@ public class ElectiveController {
         return new ResponseEntity<Elective>(elective_object, HttpStatus.OK);
     }
 
-    @PostMapping("/elective")
-    public ResponseEntity<Elective> createElective(@Valid @RequestBody Elective elective) {
-        Elective elective_object = electiveService.createElective(elective);
+    @PostMapping("/subject/{subject_id}/elective/add")
+    public ResponseEntity<Elective> createElective(@PathVariable(name = "subject_id") int subjectId,
+                                                   @Valid @RequestBody Elective elective) {
+        Elective elective_object = electiveService.createElective(subjectId, elective);
         return new ResponseEntity<Elective>(elective_object, HttpStatus.OK);
     }
 
     @PutMapping("/elective/{id}/edit")
-    public ResponseEntity<Elective> createElective(@PathVariable(name = "id") int id,
+    public ResponseEntity<Elective> updateTotalRegister(@PathVariable(name = "id") int id,
                                                    @Valid @RequestBody Elective elective) {
-        Elective elective_object = electiveService.createElective(elective);
+        Elective elective_object = electiveService.updateTotalRegister(id, elective);
         return new ResponseEntity<Elective>(elective_object, HttpStatus.OK);
     }
 
