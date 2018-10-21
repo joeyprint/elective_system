@@ -1,14 +1,11 @@
 package me.wasin.UserService;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @Table(name = "users")
@@ -17,7 +14,12 @@ import java.util.Date;
 public class User implements Serializable {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @NotBlank
+    @Column(name = "student_id")
+    private String studentId;
 
     @NotBlank
     private String name;
@@ -37,7 +39,16 @@ public class User implements Serializable {
         super();
     }
 
-    public User(@NotBlank String name, @NotBlank String surname, @NotBlank String department, @NotBlank String faculty, int year) {
+    public User(@NotBlank String studentId, @NotBlank String name, @NotBlank String surname, @NotBlank String department, @NotBlank String faculty) {
+        this.studentId = studentId;
+        this.name = name;
+        this.surname = surname;
+        this.department = department;
+        this.faculty = faculty;
+    }
+
+    public User(@NotBlank String studentId, @NotBlank String name, @NotBlank String surname, @NotBlank String department, @NotBlank String faculty, int year) {
+        this.studentId = studentId;
         this.name = name;
         this.surname = surname;
         this.department = department;
@@ -45,16 +56,12 @@ public class User implements Serializable {
         this.year = year;
     }
 
-    public User(String id, @NotBlank String name, @NotBlank String surname, @NotBlank String department, @NotBlank String faculty) {
+    public void setId(int id) {
         this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.department = department;
-        this.faculty = faculty;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
     public void setName(String name) {
@@ -77,8 +84,12 @@ public class User implements Serializable {
         this.year = year;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
+    }
+
+    public String getStudentId() {
+        return studentId;
     }
 
     public String getName() {
