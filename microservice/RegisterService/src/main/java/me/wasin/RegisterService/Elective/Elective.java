@@ -1,6 +1,8 @@
 package me.wasin.RegisterService.Elective;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import me.wasin.RegisterService.Subject.Subject;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -8,6 +10,8 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "electives")
+@EntityListeners(AuditingEntityListener.class)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Elective implements Serializable {
 
     @Id
