@@ -1,6 +1,6 @@
 package me.wasin.RegisterService.Elective;
 
-import me.wasin.ElectiveService.Subject.Subject;
+import me.wasin.RegisterService.Subject.Subject;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
