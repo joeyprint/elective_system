@@ -1,4 +1,4 @@
-package me.wasin.SubjectService;
+package me.wasin.ElectiveService.Subject;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
